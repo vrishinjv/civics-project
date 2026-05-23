@@ -1,0 +1,98 @@
+/* =====================================================
+   DESIGN SYSTEM — colors, fonts, spacing
+   You can change colors here to match your theme.
+   ===================================================== */
+:root {
+  /* Dark mode colors */
+  --bg:        #0a0f0d;
+  --bg-2:      #0f1a14;
+  --bg-3:      #142019;
+  --surface:   #1a2e22;
+  --surface-2: #213829;
+  --border:         rgba(74,222,128,0.12);
+  --border-bright:  rgba(74,222,128,0.3);
+
+  /* Accent colors — change these to match your topic */
+  --accent:      #4ade80;   /* main green */
+  --accent-dim:  #22c55e;
+  --accent-dark: #166534;
+  --coral:  #fb7185;
+  --amber:  #fbbf24;
+  --sky:    #38bdf8;
+  --purple: #c084fc;
+  --orange: #fb923c;
+
+  --text:       #f0fdf4;
+  --text-2:     #bbf7d0;
+  --text-muted: #6b7280;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+  --font-mono:    'Space Mono', monospace;
+
+  --radius:    16px;
+  --radius-sm: 8px;
+}
+
+/* Light mode — toggled by the sun/moon button in the nav */
+[data-theme="light"] {
+  --bg:        #f8fffe;
+  --bg-2:      #f0fdf4;
+  --bg-3:      #dcfce7;
+  --surface:   #ffffff;
+  --surface-2: #f0fdf4;
+  --border:        rgba(22,101,52,0.12);
+  --border-bright: rgba(22,101,52,0.3);
+  --accent:      #16a34a;
+  --accent-dim:  #15803d;
+  --accent-dark: #14532d;
+  --coral:  #e11d48;
+  --amber:  #d97706;
+  --sky:    #0284c7;
+  --purple: #7c3aed;
+  --orange: #ea580c;
+  --text:       #052e16;
+  --text-2:     #14532d;
+  --text-muted: #6b7280;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background:   var(--bg);
+  color:        var(--text);
+  font-family:  var(--font-body);
+  line-height:  1.6;
+  overflow-x:   hidden;
+  transition:   background 0.4s, color 0.4s;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--accent-dark); border-radius: 3px; }
+
+::selection { background: var(--accent); color: var(--bg); }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section { position: relative; z-index: 1; }
+
+/* Grid background used on hero */
+.grid-bg {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(74,222,128,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(74,222,128,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+}
